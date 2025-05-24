@@ -1,8 +1,16 @@
 package main
 
-import "github.com/gofiber/fiber/v3"
+import (
+	"net/http"
+
+	"github.com/gofiber/fiber/v3"
+)
 
 func main() {
 	app := fiber.New()
+	app.Get("/", func(ctx fiber.Ctx) error {
+		return ctx.SendStatus(http.StatusOK)
+	})
+
 	app.Listen(":8888")
 }
