@@ -21,8 +21,10 @@ func init() {
 func main() {
 	logConf := config.NewLogConfig()
 	customLogger := logger.NewLogger(logConf)
+	//	engine := html.New("../html", ".html")
 
 	app := fiber.New()
+
 	appConf := config.NewAppConfig()
 
 	app.Use(fiberzerolog.New(fiberzerolog.Config{
