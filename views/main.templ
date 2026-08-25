@@ -1,0 +1,13 @@
+package views
+
+import "bulletin-board/views/components"
+import "bulletin-board/views/layout"
+
+templ Main() {
+    <main>
+    @layout.Header() {
+        @components.Title("Найди работу своей мечты")
+        @components.SubTitle("Подстрока")
+    }
+    </main>    
+}

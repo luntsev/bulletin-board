@@ -19,6 +19,8 @@ func NewHomeHandler(router fiber.Router, logger *zerolog.Logger) *HomeHandler {
 		customLogger: logger,
 	}
 
+	handler.router.Get("/", handler.home)
+
 	api := router.Group("/api")
 	api.Get("/", handler.home)
 	return handler
@@ -26,7 +28,7 @@ func NewHomeHandler(router fiber.Router, logger *zerolog.Logger) *HomeHandler {
 
 func (h *HomeHandler) home(c *fiber.Ctx) error {
 
-	component := views.Hello("Коля")
+	component := views.Main()
 	return tadapter.Render(c, component)
 
 	/*h.customLogger.Warn().

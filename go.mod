@@ -1,9 +1,9 @@
 module bulletin-board
 
-go 1.24.3
+go 1.25.0
 
 require (
-	github.com/a-h/templ v0.3.894
+	github.com/a-h/templ v0.3.1020
 	github.com/gofiber/contrib/fiberzerolog v1.0.3
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/joho/godotenv v1.5.1
@@ -21,5 +21,5 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.58.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.32.0 // indirect
+	golang.org/x/sys v0.41.0 // indirect
 )
