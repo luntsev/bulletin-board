@@ -32,6 +32,7 @@ func main() {
 	}))
 
 	app.Use(recover.New())
+	app.Static("/static", "./static")
 	home.NewHomeHandler(app, customLogger)
 
 	app.Listen(appConf.Port)

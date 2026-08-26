@@ -1,0 +1,53 @@
+package layout
+
+import "bulletin-board/views/components"
+
+templ Menu() {
+    @MenuStyle()
+    <div class="menu">
+        <img class="menu_logo" src="/static/images/logo.svg">
+        <div class="menu_right">
+            <a class="menu_right-link">Войти</a>
+            @components.LinkButton("/register") {
+                <span>Зарегистрироваться</span>
+            }
+        </div>
+    </div>
+}
+
+templ MenuStyle() {
+    <style>
+        .menu {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1290px;
+            align-items: right;
+            width: 100%;
+            align-items: center;
+        }
+
+        .menu_logo {
+            width: 50px;  /* или нужная ширина */
+            height: auto;  /* сохраняет пропорции */
+        }
+    
+        .menu_right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+    
+        .menu_right-link {
+            text-decoration: none;
+            color: var(--color-white);
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        .menu_right-link:hover {
+            color: #9F9F9F;
+        }
+    </style>
+}

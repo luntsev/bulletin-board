@@ -4,10 +4,16 @@ import "bulletin-board/views/components"
 import "bulletin-board/views/layout"
 
 templ Main() {
-    <main>
-    @layout.Header() {
-        @components.Title("Найди работу своей мечты")
-        @components.SubTitle("Подстрока")
-    }
-    </main>    
+    @layout.Layout(layout.LaoutProprs{
+        Title: "Найди работу мечты",
+        MetaDescription: "Сервис поиска работы",
+    }) {
+        <main>
+            @layout.Header() {
+            @components.Title("НЕ Найди работу своей мечты")
+            @components.SubTitle("Подстрока")
+            }
+            Main
+        </main>
+    }    
 }
