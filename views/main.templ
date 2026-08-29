@@ -2,6 +2,7 @@ package views
 
 import "bulletin-board/views/components"
 import "bulletin-board/views/layout"
+import "bulletin-board/views/widgets"
 
 templ Main() {
     @layout.Layout(layout.LaoutProprs{
@@ -16,16 +17,7 @@ templ Main() {
             }
             Main
             <div class="main__submit-form">
-                @components.Title2("Опубликовать вакансию")
-                @components.Input(components.InputProps{
-                    Placeholder: "Должность",
-                    Name: "role",
-                })
-                @components.SubmitButton() {
-                    <span>
-                        Отправить
-                    </span>
-                }
+                @widgets.VacancyForm()
             </div>
         </main>
     }    
@@ -34,6 +26,9 @@ templ Main() {
 templ MainStyle() {
 <style>
     .main__submit-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: rgba(48, 150, 137, 0.10);
     }
 </style>

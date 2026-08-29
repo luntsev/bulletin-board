@@ -3,6 +3,7 @@ package main
 import (
 	"bulletin-board/config"
 	"bulletin-board/internal/home"
+	"bulletin-board/internal/vacancy"
 	"bulletin-board/pkg/logger"
 
 	"github.com/gofiber/contrib/fiberzerolog"
@@ -33,7 +34,8 @@ func main() {
 
 	app.Use(recover.New())
 	app.Static("/static", "./static")
-	home.NewHomeHandler(app, customLogger)
+	home.NewHandler(app, customLogger)
+	vacancy.NewHandler(app, customLogger)
 
 	app.Listen(appConf.Port)
 }

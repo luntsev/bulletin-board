@@ -13,7 +13,7 @@ type HomeHandler struct {
 	customLogger *zerolog.Logger
 }
 
-func NewHomeHandler(router fiber.Router, logger *zerolog.Logger) *HomeHandler {
+func NewHandler(router fiber.Router, logger *zerolog.Logger) *HomeHandler {
 	handler := &HomeHandler{
 		router:       router,
 		customLogger: logger,
